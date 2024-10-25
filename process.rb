@@ -10,7 +10,7 @@ xml_dir = ARGV[0]
 all_rows = []
 
 # Process each XML file in the directory
-Dir.glob(File.join(xml_dir, '*.dat')).each do |xml_file|
+Dir.glob(File.join(xml_dir, '**/*.dat')).each do |xml_file|
   doc = File.open(xml_file) { |f| Nokogiri::XML(f) }
 
   # Extract system name from header
